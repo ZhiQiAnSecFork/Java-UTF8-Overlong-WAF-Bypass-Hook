@@ -1,4 +1,4 @@
-package java.com.n1ght;
+package com.n1ght;
 
 import java.lang.instrument.Instrumentation;
 import java.lang.reflect.AccessibleObject;
