@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact name="UTF8_Agent:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/UTF8_Agent_jar2</output-path>
+    <root id="root">
+      <element id="archive" name="UTF8_Agent.jar">
+        <element id="module-output" name="UTF8_Agent" />
+      </element>
+      <element id="library" level="project" name="Maven: org.javassist:javassist:3.29.0-GA" />
+    </root>
+  </artifact>
+</component>

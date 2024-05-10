@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+Premain-Class: com.n1ght.Agent
+Project-name: com.n1ght.AgentMain
+Project-version: 1.0-SNAPSHOT
