@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.n1ght</groupId>
     <artifactId>UTF8_Agent</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -20,5 +20,70 @@
             <version>3.29.0-GA</version>
         </dependency>
     </dependencies>
+
+      <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version> <!-- Use the latest version available -->
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!-- Add manifest attributes here -->
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+
+                        <manifestEntries>
+                                <Manifest-Version>1.0</Manifest-Version>
+                                <Archiver-Version>Plexus Archiver</Archiver-Version>
+                                <Created-By>Apache Maven</Created-By>
+                                <Can-Redefine-Classes>true</Can-Redefine-Classes>
+                                <Can-Retransform-Classes>true</Can-Retransform-Classes>
+                                <Premain-Class>com.n1ght.Agent</Premain-Class>
+                                <Project-name>com.n1ght.AgentMain</Project-name>
+                                <Project-version>1.0-SNAPSHOT</Project-version>
+                            </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <fork>true</fork>
+                    <verbose>true</verbose>
+                    <encoding>UTF-8</encoding>
+                    <compilerArguments>
+                        <sourcepath>
+                            ${project.basedir}/src/main/java
+                        </sourcepath>
+                    </compilerArguments>
+
+
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

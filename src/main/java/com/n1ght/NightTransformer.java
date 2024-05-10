@@ -13,7 +13,7 @@ public class NightTransformer implements ClassFileTransformer {
 
 
         if(className.equals("java/io/ObjectOutputStream$BlockDataOutputStream")){
-            System.out.println("true2");
+//            System.out.println("true2");
 
             ClassPool classPool = ClassPool.getDefault();
             try {
